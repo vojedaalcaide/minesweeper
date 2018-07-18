@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Mine Sweeper</title>
+        <link href="https://fonts.googleapis.com/css?family=Fjalla+One" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="styles.css">
+        <script
+            src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+            integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E="
+            crossorigin="anonymous">
+        </script>
+        <script src="minesweeper.js"></script>
+        <script src="game.js"></script>
+    </head>
+
+    <!-- BODY -->
+    <body>
+        <div id="minesweeper-title">Mine Sweeper</div>
+        <div class="container-wrapper">
+            <div id="game-options">
+                <label>Select difficulty: </label>
+                &nbsp;&nbsp;
+                <select id="difficulty-select">
+                    <option value="EASY">Easy</option>
+                    <option value="MEDIUM">Medium</option>
+                    <option value="HARD">Hard</option>
+                    <option value="IMPOSSIBLE">Impossible</option>
+                </select>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <button id="play-btn">Play!</button>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <div id="timer-txt">00:00</div>
+            </div>
+            <div id="minesweeper-container" oncontextmenu="return false;"></div>
+        </div>
+        <div id="result-div" class="hide"></div>
+    </body>
+</html>
