@@ -79,7 +79,7 @@ body {
     border: 1px solid #b7b7b7;
 }
 .cell-bomb {
-    background: url(bomb.png) 0;
+    background: url(../images/bomb.png) 0;
     background-size: 80% 80%;
     background-repeat: no-repeat;
     background-position: center;
@@ -89,14 +89,14 @@ body {
     background-color: #ff0000 !important;
 }
 .cell-win {
-    background: url(flag.png) 0;
+    background: url(../images/flag.png) 0;
     background-size: 80% 80%;
     background-repeat: no-repeat;
     background-position: center;
     background-color: #b7b4b4;
 }
 .cell-marked {
-    background: url(flag-marked.png) 0;
+    background: url(../images/flag-marked.png) 0;
     background-size: 80% 80%;
     background-repeat: no-repeat;
     background-position: center;

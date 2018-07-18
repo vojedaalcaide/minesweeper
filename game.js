@@ -81,6 +81,7 @@ $(document).ready(function(){
 
 function resetGame() {
     var diffConfig = getDifficultyConfig(currentDificulty);
+    mineSweeper = null;
     mineSweeper = new MineSweeper({
         cellSize: CELL_SIZE,
         sizeX: diffConfig.sizeX,
@@ -90,6 +91,11 @@ function resetGame() {
         gameWin: onGameWin,
         gameOver: onGameOver
     });
+
+    // game not initalized
+    if (!mineSweeper.getConfig) {
+        window.document.write('<strong>ERROR</strong> initializing <em>MineSweeper instance</em>');
+    }
     resetUI();
 }
 

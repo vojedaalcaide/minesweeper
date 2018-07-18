@@ -6,7 +6,6 @@ function MineSweeper (options, callbacks) {
     defaultOptions = {
         mineSymbol: 9,
         emptySymbol: 0,
-        // cellSize: 40, // in pixels (px)
         // sizeX: 10,
         // sizeY: 10,
         // numMines: 20,
@@ -18,11 +17,28 @@ function MineSweeper (options, callbacks) {
     base.matrixRevealed = []; // matrix with revealed cells
     base.cellsRevealed = 0;
 
+    // options validations
+    if (!options) {
+        console.error('No `options` received as parameter');
+    } else {
+        if (!options.sizeX || typeof options.sizeX !== 'number') {
+            console.error('`options.sizeX` not defined or not a number when initializing MineSweeper()');
+            return;
+        }
+        if (!options.sizeY || typeof options.sizeY !== 'number') {
+            console.error('`options.sizeY` not defined or not a number when initializing MineSweeper()');
+            return;
+        }
+        if (!options.numMines || typeof options.numMines !== 'number') {
+            console.error('`options.numMines` not defined or not a number when initializing MineSweeper()');
+            return;
+        }
+    }
+
     // set configuration from
     this.config = Object.assign({}, defaultOptions, options);
 
     this.init = function () {
-        console.log('Initializing MineSweeper...');
         base.MATRIX = base.generateArrayZeros({
             x: base.config.sizeX,
             y: base.config.sizeY,
@@ -48,7 +64,6 @@ function MineSweeper (options, callbacks) {
                 minesGenerated++;
             }
         }
-        console.log(matrix);
         return matrix;
     }
     
@@ -108,14 +123,14 @@ function MineSweeper (options, callbacks) {
             // bomb explode
             setTimeout(function() {
                 callbacks.gameOver();
-            }, 250);
+            }, 150);
         } else {
             base.cellsRevealed++;
             var totalCells = base.config.sizeX * base.config.sizeY;
             if ((totalCells - base.cellsRevealed) <= base.config.numMines) {
                 setTimeout(function() {
                     callbacks.gameWin();
-                }, 250);
+                }, 150);
             }
         }
         list.push({ x, y, value });
@@ -211,8 +226,6 @@ function MineSweeper (options, callbacks) {
         return array;
     }
 
-    this.init();
-
     this.getConfig = function() {
         return JSON.parse(JSON.stringify(base.config));
     }
@@ -223,6 +236,9 @@ function MineSweeper (options, callbacks) {
         }
         return base.MATRIX[y][x];
     }
+
+    // initialize logic
+    this.init();
 
     // visible properties from outside
     return {
