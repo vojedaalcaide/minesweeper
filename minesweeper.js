@@ -57,10 +57,10 @@ function MineSweeper (options, callbacks) {
         var matrix = base.generateArrayZeros({x, y});
         var minesGenerated = 0;
         while (minesGenerated < mines) {
-            var y = Math.floor(Math.random() * base.config.sizeX);
-            var x = Math.floor(Math.random() * base.config.sizeY);
-            if (matrix[y][x] !== 1) {
-                matrix[y][x] = 1;
+            var xCoord = Math.floor(Math.random() * base.config.sizeX);
+            var yCoord = Math.floor(Math.random() * base.config.sizeY);
+            if (matrix[yCoord][xCoord] !== 1) {
+                matrix[yCoord][xCoord] = 1;
                 minesGenerated++;
             }
         }
