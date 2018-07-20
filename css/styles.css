@@ -3,11 +3,11 @@ body {
     flex-direction: column;
 }
 #minesweeper-title {
-    font-size: 30px;
+    font-size: 26px;
     font-family: 'Fjalla One';
     color: #000000;
-    margin-top: 15px;
-    margin-bottom: 15px;
+    margin-top: 10px;
+    margin-bottom: 10px;
     text-align: center;
 }
 .container-wrapper {
@@ -26,23 +26,18 @@ body {
 /* Game options bar */
 #game-options {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     margin-bottom: 20px;
     font-family: 'Fjalla One';
 }
-#game-options label {
-    font-size: 13px;
+#main-settings, #custom-settings {
+    display: flex;
+    flex-direction: row;
 }
-#difficulty-select, #play-btn {
-    height: 25px;
-    background-color: #e2e2e2;
-    border-top: 2px solid #d2d2d2;
-    border-left: 2px solid #d2d2d2;
-    border-bottom: 2px solid #868686;
-    border-right: 2px solid #868686;
-    font-family: 'Fjalla One';
+#custom-settings {
+    margin-top: 20px;
 }
 #difficulty-select {
     width: 100px;
@@ -58,6 +53,30 @@ body {
     font-size: 18px;
     text-align: center;
     color: #ffff00;
+}
+.small-input {
+    width: 40px;
+}
+#game-options label {
+    font-size: 13px;
+    line-height: 25px;
+}
+#game-options button, #game-options select {
+    height: 25px;
+    background-color: #e2e2e2;
+    border-top: 2px solid #d2d2d2;
+    border-left: 2px solid #d2d2d2;
+    border-bottom: 2px solid #868686;
+    border-right: 2px solid #868686;
+    font-family: 'Fjalla One';
+}
+#game-options input {
+    height: 19px;
+    background-color: #fffefe;
+    border-bottom: 2px solid #d2d2d2;
+    border-right: 2px solid #d2d2d2;
+    border-top: 2px solid #868686;
+    border-left: 2px solid #868686;
 }
 /* END - Game options bar */
 

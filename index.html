@@ -15,18 +15,31 @@
         <div id="minesweeper-title">Mine Sweeper</div>
         <div class="container-wrapper">
             <div id="game-options">
-                <label>Select difficulty: </label>
-                &nbsp;&nbsp;
-                <select id="difficulty-select">
-                    <option value="EASY">Easy</option>
-                    <option value="MEDIUM">Medium</option>
-                    <option value="HARD">Hard</option>
-                    <option value="IMPOSSIBLE">Impossible</option>
-                </select>
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <button id="play-btn">Play!</button>
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <div id="timer-txt">00:00</div>
+                <div id="main-settings">
+                    <label>Difficulty: </label>
+                    &nbsp;&nbsp;
+                    <select id="difficulty-select">
+                        <option value="EASY">Easy</option>
+                        <option value="MEDIUM">Medium</option>
+                        <option value="HARD">Hard</option>
+                        <option value="IMPOSSIBLE">Impossible</option>
+                        <option value="CUSTOM">Custom</option>
+                    </select>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <button id="play-btn">Play!</button>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <div id="timer-txt">00:00</div>
+                </div>
+                <div id="custom-settings" style="display: none;">
+                    <label>Num rows:</label>&nbsp;&nbsp;
+                    <input type="number" id="input-custom-x" class="small-input" min="10" max="75">
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <label>Num. columns:</label>&nbsp;&nbsp;
+                    <input type="number" id="input-custom-y" class="small-input" min="10" max="75">
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <label>Num. mines:</label>&nbsp;&nbsp;
+                    <input type="number" id="input-custom-mines" class="small-input" min="10" max="1000">
+                </div>
             </div>
             <div id="minesweeper-container" oncontextmenu="return false;"></div>
         </div>
