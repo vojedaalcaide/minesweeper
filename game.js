@@ -124,9 +124,11 @@ function resetUI() {
 
 // setting up click events on cells
 function setCellListeners() {
-    $('.' + CLASS_CELL_BTN).not('.' + CLASS_USER_MARK)
+    $('.' + CLASS_CELL_BTN)
     .on('click', function(ev) {
-        onCellClick(this);        
+        if (!ev.target.hasClass(CLASS_USER_MARK)) {
+            onCellClick(this);
+        }
     })
     .on('mousedown', function(ev) {
         ev.preventDefault();
