@@ -124,7 +124,7 @@ function resetUI() {
 
 // setting up click events on cells
 function setCellListeners() {
-    $('.' + CLASS_CELL_BTN)
+    $('.' + CLASS_CELL_BTN).not('.' + CLASS_USER_MARK)
     .on('click', function(ev) {
         onCellClick(this);        
     })
