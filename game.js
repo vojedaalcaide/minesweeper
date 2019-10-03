@@ -126,7 +126,7 @@ function resetUI() {
 function setCellListeners() {
     $('.' + CLASS_CELL_BTN)
     .on('click', function(ev) {
-        if (!ev.target.hasClass(CLASS_USER_MARK)) {
+        if (!$(ev.target).hasClass(CLASS_USER_MARK)) {
             onCellClick(this);
         }
     })
